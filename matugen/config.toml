@@ -1,0 +1,6 @@
+[config]
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/kitty-matugen.conf'
+post_hook = "pkill -SIGUSR1 kitty"
