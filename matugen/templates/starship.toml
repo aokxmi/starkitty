@@ -1,0 +1,163 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+# Pipes ╰─ ╭─
+# Powerline symbols                                     
+# Wedges 🭧🭒 🭣🭧🭓
+# Random noise 🬖🬥🬔🬗
+
+#format  
+
+format = """
+$line_break\
+[](fg:{{ colors.primary_fixed.default.hex }})\
+$os\
+[](bg:{{ colors.primary_container.default.hex }} fg:{{ colors.primary_fixed.default.hex }})\
+$directory\
+[ ](bg:{{ colors.primary.default.hex }} fg:{{ colors.primary_container.default.hex }})\
+$git_branch\
+$git_status\
+[ ](bg:{{ colors.on_tertiary_container.default.hex }} fg:{{ colors.primary.default.hex }})\
+$c\
+$rust\
+$lua\
+$golang\
+$nodejs\
+$bun\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[ ](bg:{{ colors.secondary_container.default.hex }} fg:{{ colors.on_tertiary_container.default.hex }})\
+$cmd_duration\
+[](bg:none fg:{{ colors.secondary_container.default.hex }})\
+$fill\
+[](fg:{{ colors.primary_fixed.default.hex }})\
+$time\
+[](fg:{{ colors.primary_fixed.default.hex }})\
+$line_break\
+$character"""
+
+[fill]
+symbol = ' '
+style = 'fg:{{ colors.outline_variant.default.hex }}'
+
+[character]
+success_symbol = "[ ](bold fg:{{ colors.primary.default.hex }})"
+error_symbol = "[ ](bold fg:{{ colors.error.default.hex }})"
+
+[os]
+disabled = false
+style = "bg:{{ colors.primary_fixed.default.hex }} fg:{{ colors.primary_container.default.hex }}"
+
+[os.symbols]
+Arch = " 󰣇 "
+Alpine = "  "
+Amazon = "  "
+Android = "  "
+CentOS = "  "
+Debian = "  "
+DragonFly = "  "
+Emscripten = "  "
+EndeavourOS = "  "
+Fedora = "  "
+FreeBSD = "  "
+Gentoo = "  "
+Linux = "  "
+Macos = "  "
+Manjaro = "  "
+Mariner = "  "
+MidnightBSD = "  "
+Mint = "  "
+NetBSD = "  "
+NixOS = "  "
+openSUSE = "  "
+Pop = "  "
+Raspbian = "  "
+Redhat = " "
+RedHatEnterprise = "  "
+Redox = "  "
+SUSE = "  "
+Ubuntu = "  "
+Unknown = "  "
+Windows = "  "
+
+[package]
+disabled = false
+
+[git_branch]
+style = "bg:{{ colors.primary.default.hex }}"
+symbol = "󰘬"
+format = '[[$symbol $branch ](bold fg:{{ colors.secondary_container.default.hex }} bg:{{ colors.primary.default.hex }})]($style)'
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = " "
+
+[git_status]
+style = "bold bg:{{ colors.primary.default.hex }}"
+format = '[[($all_status$ahead_behind )](fg:{{ colors.secondary_container.default.hex }} bg:{{ colors.primary.default.hex }})]($style)'
+ahead = " ⇡${count}"
+behind = " ⇣${count}"
+diverged = " ⇕⇡${ahead_count}⇣${behind_count}"
+conflicted = " =${count}"
+staged = " +${count}"
+modified = " !${count}"
+untracked = " ?${count}"
+deleted = "✘${count}"
+renamed = " »${count}"
+stashed = " $${count}"
+
+[time]
+disabled = false
+format = '[[ $time ](fg:{{ colors.surface.default.hex }} bg:{{ colors.primary_fixed.default.hex }})]($style)'
+style = "bg:{{ colors.primary.default.hex }}"
+time_format = "%T"
+
+[directory]
+home_symbol = ""
+read_only = "  "
+style = "bg:{{ colors.primary_container.default.hex }} fg:{{ colors.on_primary_container.default.hex }}"
+truncation_length = 0
+truncate_to_repo = false
+truncation_symbol = ".../"
+format = '[ $path ]($style)[](bold fg:{{ colors.primary_container.default.hex }})'
+
+[directory.substitutions]
+"Desktop" = "  "
+"Documents" = "  "
+"Downloads" = "  "
+"Music" = " 󰎈 "
+"Pictures" = "  "
+"Videos" = "  "
+"GitHub" = " 󰊤 "
+
+[cmd_duration]
+min_time = 0
+format = '[$duration ](bold bg:{{ colors.secondary_container.default.hex }} fg:{{ colors.on_tertiary_container.default.hex }})'
+
+[c]
+symbol = " "
+style = "bg:{{ colors.primary.default.hex }}"
+format = '[[$symbol($version) ](fg:{{ colors.on_secondary.default.hex }} bg:{{ colors.on_tertiary_container.default.hex }})]($style)'
+
+[rust]
+symbol = " "
+style = "bg:{{ colors.primary.default.hex }}"
+format = '[[$symbol($version) ](fg:{{ colors.on_secondary.default.hex }} bg:{{ colors.on_tertiary_container.default.hex }})]($style)'
+
+[python]
+symbol = " "
+style = "bg:{{ colors.primary.default.hex }}"
+format = '[[$symbol($version) ](fg:{{colors.on_secondary.default.hex}} bg:{{ colors.on_tertiary_container.default.hex }})]($style)'
+
+[nodejs]
+symbol = " "
+style = "bg:{{ colors.primary.default.hex }}"
+format = '[[$symbol($version) ](bold fg:{{ colors.on_secondary.default.hex }} bg:{{ colors.on_tertiary_container.default.hex }})]($style)'
+
+[lua]
+symbol = " "
+style = "bg:{{ colors.primary.default.hex }}"
+format = '[[$symbol($version) ](fg:{{ colors.on_secondary.default.hex }} bg:{{ colors.on_tertiary_container.default.hex }})]($style)'
+
