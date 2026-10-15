@@ -15,5 +15,30 @@ This present uses matugen to sync your terminal promt colors with your wallpaper
 
 ## Prerequisties
 Make sure you have following dependencies installed on your system:
+1. **Starship Prompt**
+  ```bash
+  #install via corss-platform script
+  curl -sS https://starship.rs/install.sh | sh
+```
+```bash
+#install via your distro package manager (for example: for Arch Linux)
+sudo pacman -S starship
+```
+check out [Starship installation](https://starship.rs/installing/). 
+
+2. **Matugen**
+```bash
+#install via your distro package manager (for example: for Arch Linux)
+sudo pacman -S matugen
+```
+
+## Installation and Setup
+### Clone the present
+```bash
+git clone https://github.com/aokxmi/starkitty.git
+cd starkitty
+```
+
+### Configure 
 
 
